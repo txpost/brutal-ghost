@@ -1,0 +1,12 @@
+{{!< default}}
+
+{{#post}}
+<article class="{{post_class}}">
+  {{#if image}}
+    <img src="{{image}}">
+  {{/if}}
+  <h1>{{title}}</h1>
+  {{content}}
+  <div class='post-meta'>{{date format="YYYYMMDD"}}{{#if tags}}, {{tags}}{{/if}}</div>
+</article>
+{{/post}}

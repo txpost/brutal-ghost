@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{{asset 'css/style.css'}}">
+  <link rel="stylesheet" media="(max-width:750px)" href="{{asset 'css/style-small.css'}}">
+  <link rel="shortcut icon" href="{{asset '/favicon.ico'}}">
+  {{ghost_head}}
+</head>
+<body>
+  {{#if @blog.navigation}}
+    <section id="header">
+      {{navigation}}
+    </section>
+  {{/if}}
+
+  {{#is "home"}}
+    {{#if @blog.title}}
+      <h1 id="main-title">{{@blog.title}}</h1>
+    {{/if}}
+    {{#if @blog.cover}}
+      <img id='img-header' src="{{@blog.cover}}">
+    {{/if}}
+    {{#if @blog.description}}
+      <p id="description">{{@blog.description}}</p>
+    {{/if}}
+  {{/is}}
+
+  <main class="main">
+    {{{body}}}
+  </main>
+
+  {{ghost_foot}}
+  
+</body>
+</html>
